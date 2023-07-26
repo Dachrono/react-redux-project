@@ -6,20 +6,18 @@ import { fetchdata } from '../redux/slices';
 const Missions = () => {
   const Tigger = useDispatch();
 
-  useEffect(() => { Tigger(fetchdata()); }, []);
+  useEffect(() => {
+    Tigger(fetchdata());
+  });
 
   const { info, isLoading, error } = useSelector((state) => state.missions);
 
   if (isLoading === true) {
-    return (
-      <div className="loading">Loading...</div>
-    );
+    return <div className="loading">Loading...</div>;
   }
 
   if (error !== undefined) {
-    return (
-      <div className="error">{ error }</div>
-    );
+    return <div className="error">{error}</div>;
   }
 
   const infoMap = info.map((item) => (
@@ -27,7 +25,9 @@ const Missions = () => {
       <th>{item.mission_name}</th>
       <th>{item.description}</th>
       <th>membership</th>
-      <th><button type="button">status</button></th>
+      <th>
+        <button type="button">status</button>
+      </th>
     </tr>
   ));
 
@@ -44,9 +44,7 @@ const Missions = () => {
               <th> </th>
             </tr>
           </thead>
-          <tbody>
-            {infoMap}
-          </tbody>
+          <tbody>{infoMap}</tbody>
         </table>
       </div>
     </>
