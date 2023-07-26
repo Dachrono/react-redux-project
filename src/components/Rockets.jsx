@@ -17,9 +17,13 @@ const Rockets = () => {
     <div className="rockets__container">
       {rockets.map((rocket) => (
         <div className="rockets__card" key={rocket.id}>
-          <img src={rocket.flickr_images?.[0]} width="180px" alt={rocket.rocket_name} />
+          <img
+            className="rockets__card__img"
+            src={rocket.flickr_images?.[0]}
+            alt={rocket.rocket_name}
+          />
           <div>
-            <h4>{rocket.rocket_name}</h4>
+            <h2 className="rockets__card__title">{rocket.rocket_name}</h2>
             <p>{rocket.description}</p>
             <button className="rockets__reserveBtn" type="button">
               Reserve Rocket
