@@ -10,9 +10,48 @@ tr,
 th {
   padding: 15px;
   text-align: left;
-  border: 1px solid rgba(128, 128, 128, 0.2);
+  border: 1px solid #80808033;
 }
 
-tr:nth-child(even) {
-  background-color: rgba(128, 128, 128, 0.3);
+tbody tr:nth-child(odd) {
+  background-color: #8080804d;
+}
+
+.gray {
+  all: initial;
+  background-color: #808080;
+  padding: 5px;
+  white-space: nowrap;
+  border-radius: 5px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.blue {
+  all: initial;
+  background-color: #2e8ff1;
+  padding: 5px;
+  white-space: nowrap;
+  border-radius: 5px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.graybtn {
+  all: initial;
+  padding: 5px;
+  white-space: nowrap;
+  border: 2px solid #808080;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #808080;
+}
+
+.pinkbtn {
+  all: initial;
+  padding: 5px;
+  white-space: nowrap;
+  border: 2px solid #ff8181;
+  border-radius: 5px;
+  color: #ff8181;
 }
