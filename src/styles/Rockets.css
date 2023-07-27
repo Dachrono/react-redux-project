@@ -52,3 +52,18 @@
   color: rgb(184, 175, 175);
   border: 1px solid rgb(184, 175, 175);
 }
+
+.rockets__cancelBtn {
+  color: white;
+  padding: 0.5rem 1rem;
+  background-color: darkred;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.rockets__cancelBtn:hover {
+  background-color: white;
+  color: darkred;
+  border: 1px solid darkred;
+}
