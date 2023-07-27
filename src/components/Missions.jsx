@@ -1,14 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import '../styles/Missions.css';
-import { fetchdata } from '../redux/slices';
+import { addReservedMission } from '../redux/missionsSlice';
 
 const Missions = () => {
   const Tigger = useDispatch();
-
-  useEffect(() => {
-    Tigger(fetchdata());
-  });
 
   const { info, isLoading, error } = useSelector((state) => state.missions);
 
@@ -24,9 +19,15 @@ const Missions = () => {
     <tr key={item.mission_id}>
       <th>{item.mission_name}</th>
       <th>{item.description}</th>
-      <th>membership</th>
       <th>
-        <button type="button">status</button>
+        {item.reserved
+          ? (<span className="blue">Active Member</span>)
+          : (<span className="gray">Not a member</span>)}
+      </th>
+      <th>
+        {item.reserved
+          ? (<button type="button" className="pinkbtn">Leave Mission</button>)
+          : (<button type="button" className="graybtn" onClick={() => { Tigger(addReservedMission(item.mission_id)); }}>Join Mission</button>)}
       </th>
     </tr>
   ));

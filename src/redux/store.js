@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { missionsSlice } from './slices';
+import { missionsSlice } from './missionsSlice';
 import rocketsSliceReducer from './rocketsSlice';
 
 export default configureStore({
