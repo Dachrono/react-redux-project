@@ -22,7 +22,7 @@ const Missions = () => {
       <th>
         {item.reserved
           ? (<span className="blue">Active Member</span>)
-          : (<span className="gray">Not a member</span>)}
+          : (<span className="gray">NOT A MEMBER</span>)}
       </th>
       <th>
         {item.reserved
