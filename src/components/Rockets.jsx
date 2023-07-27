@@ -32,7 +32,10 @@ const Rockets = () => {
           />
           <div>
             <h2 className="rockets__card__title">{rocket.rocket_name}</h2>
-            <p>{rocket.description}</p>
+            <p>
+              {rocket.isReserved && <span className="rockets__card__badge">Reserved</span>}
+              {rocket.description}
+            </p>
             {!rocket.isReserved && (
               <button
                 className="rockets__reserveBtn"
