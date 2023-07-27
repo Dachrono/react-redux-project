@@ -1,33 +1,34 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import '../styles/Missions.css';
-import { fetchdata } from '../redux/slices';
+import { addReservedMission } from '../redux/missionsSlice';
 
 const Missions = () => {
   const Tigger = useDispatch();
 
-  useEffect(() => { Tigger(fetchdata()); }, []);
-
   const { info, isLoading, error } = useSelector((state) => state.missions);
 
   if (isLoading === true) {
-    return (
-      <div className="loading">Loading...</div>
-    );
+    return <div className="loading">Loading...</div>;
   }
 
   if (error !== undefined) {
-    return (
-      <div className="error">{ error }</div>
-    );
+    return <div className="error">{error}</div>;
   }
 
   const infoMap = info.map((item) => (
     <tr key={item.mission_id}>
       <th>{item.mission_name}</th>
       <th>{item.description}</th>
-      <th>membership</th>
-      <th><button type="button">status</button></th>
+      <th>
+        {item.reserved
+          ? (<span className="blue">Active Member</span>)
+          : (<span className="gray">Not a member</span>)}
+      </th>
+      <th>
+        {item.reserved
+          ? (<button type="button" className="pinkbtn">Leave Mission</button>)
+          : (<button type="button" className="graybtn" onClick={() => { Tigger(addReservedMission(item.mission_id)); }}>Join Mission</button>)}
+      </th>
     </tr>
   ));
 
@@ -44,9 +45,7 @@ const Missions = () => {
               <th> </th>
             </tr>
           </thead>
-          <tbody>
-            {infoMap}
-          </tbody>
+          <tbody>{infoMap}</tbody>
         </table>
       </div>
     </>
