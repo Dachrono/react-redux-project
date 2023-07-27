@@ -37,6 +37,16 @@ const rocketsSlice = createSlice({
         return rocket;
       });
     },
+    cancelBooking: (state, action) => {
+      const id = parseInt(action.payload, 10);
+      state.rockets = state.rockets.map((rocket) => {
+        if (rocket.id === id) {
+          // console.log(`Rocket ${rocket.id} reserve was canceled`);
+          return { ...rocket, isReserved: false };
+        }
+        return rocket;
+      });
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -57,4 +67,4 @@ const rocketsSlice = createSlice({
 });
 
 export default rocketsSlice.reducer;
-export const { bookingRocket } = rocketsSlice.actions;
+export const { bookingRocket, cancelBooking } = rocketsSlice.actions;
