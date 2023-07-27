@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import '../styles/Missions.css';
-import { addReservedMission } from '../redux/missionsSlice';
+import { addReservedMission, removedMission } from '../redux/missionsSlice';
 
 const Missions = () => {
   const Tigger = useDispatch();
@@ -26,7 +26,7 @@ const Missions = () => {
       </th>
       <th>
         {item.reserved
-          ? (<button type="button" className="pinkbtn">Leave Mission</button>)
+          ? (<button type="button" className="pinkbtn" onClick={() => { Tigger(removedMission(item.mission_id)); }}>Leave Mission</button>)
           : (<button type="button" className="graybtn" onClick={() => { Tigger(addReservedMission(item.mission_id)); }}>Join Mission</button>)}
       </th>
     </tr>
@@ -38,7 +38,7 @@ const Missions = () => {
       <div className="titles">
         <table>
           <thead>
-            <tr>
+            <tr className="tableHead">
               <th>Missions</th>
               <th>Description</th>
               <th>Status</th>
