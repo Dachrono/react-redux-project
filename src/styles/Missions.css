@@ -39,7 +39,7 @@ tbody tr:nth-child(odd) {
 
 .graybtn {
   all: initial;
-  padding: 5px;
+  padding: 10px;
   white-space: nowrap;
   border: 2px solid #808080;
   border-radius: 5px;
@@ -49,7 +49,7 @@ tbody tr:nth-child(odd) {
 
 .pinkbtn {
   all: initial;
-  padding: 5px;
+  padding: 10px;
   white-space: nowrap;
   border: 2px solid #ff8181;
   border-radius: 5px;
