@@ -9,6 +9,9 @@ const initialState = {
 export const getRockets = createAsyncThunk('rockets/getRockets', async () => {
   try {
     const response = await fetch('https://api.spacexdata.com/v3/rockets');
+    if (!response.ok) {
+      throw new Error('Failed to fetch rockets');
+    }
 
     const data = await response.json();
     return data.map((rocket) => ({
@@ -19,7 +22,7 @@ export const getRockets = createAsyncThunk('rockets/getRockets', async () => {
       isReserved: false,
     }));
   } catch (error) {
-    return error;
+    throw new Error('Failed to fetch rockets');
   }
 });
 
