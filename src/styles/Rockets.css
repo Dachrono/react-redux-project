@@ -67,3 +67,12 @@
   color: darkred;
   border: 1px solid darkred;
 }
+
+.rockets__card__badge {
+  font-size: 0.8rem;
+  margin-right: 0.2rem;
+  padding: 0.2rem 0.4rem;
+  background-color: darkgreen;
+  color: white;
+  border-radius: 4px;
+}
