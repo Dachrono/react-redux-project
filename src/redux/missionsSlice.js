@@ -29,6 +29,15 @@ export const missionsSlice = createSlice({
         existingMission.reserved = true;
       }
     },
+    removedMission(state, action) {
+      const missionId = action.payload;
+      const existingMission = state.info.find(
+        (mission) => mission.mission_id === missionId,
+      );
+      if (existingMission) {
+        existingMission.reserved = false;
+      }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -50,7 +59,7 @@ export const missionsSlice = createSlice({
 
 });
 
-export const { addReservedMission } = missionsSlice.actions;
+export const { addReservedMission, removedMission } = missionsSlice.actions;
 
 export const otra = createSlice({
   name: 'otra',
