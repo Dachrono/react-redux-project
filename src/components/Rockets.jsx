@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getRockets } from '../redux/rocketsSlice';
+import { getRockets, bookingRocket } from '../redux/rocketsSlice';
 import '../styles/Rockets.css';
 
 const Rockets = () => {
@@ -13,16 +13,28 @@ const Rockets = () => {
     }
   }, [dispatch, rockets.length]);
 
+  const handleBooking = (rocketId) => {
+    dispatch(bookingRocket(rocketId));
+  };
+
   return (
     <div className="rockets__container">
       {rockets.map((rocket) => (
         <div className="rockets__card" key={rocket.id}>
-          <img src={rocket.flickr_images?.[0]} width="180px" alt={rocket.rocket_name} />
+          <img
+            className="rockets__card__img"
+            src={rocket.flickr_images?.[0]}
+            alt={rocket.rocket_name}
+          />
           <div>
-            <h4>{rocket.rocket_name}</h4>
+            <h2 className="rockets__card__title">{rocket.rocket_name}</h2>
             <p>{rocket.description}</p>
-            <button className="rockets__reserveBtn" type="button">
-              Reserve Rocket
+            <button
+              className="rockets__reserveBtn"
+              type="button"
+              onClick={() => handleBooking(rocket.id, rocket.isReserved)}
+            >
+              Book now!
             </button>
           </div>
         </div>
