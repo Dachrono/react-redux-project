@@ -1,10 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import '../styles/profile.css';
 
 function Myprofile() {
   const rockets = useSelector((state) => state.rockets.rockets);
+  const missions = useSelector((state) => state.missions.info);
 
   const reservedRockets = rockets.filter((rocket) => rocket.isReserved);
+  const reservedMissions = missions.filter((item) => item.reserved);
+
   return (
     <>
       <div>
@@ -26,6 +30,14 @@ function Myprofile() {
             </li>
           ))}
         </ul>
+        <h2>My missions</h2>
+        {reservedMissions.map((item) => (
+          <div className="mission" key={item.id}>
+            <h3>{item.mission_name}</h3>
+            <p>{item.description}</p>
+          </div>
+        ))}
+
       </div>
     </>
   );
