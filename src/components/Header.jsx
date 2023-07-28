@@ -12,13 +12,13 @@ function Header() {
         </div>
         <nav>
           <li>
-            <NavLink to="/">Rockets</NavLink>
+            <NavLink to="/" className="links">Rockets</NavLink>
           </li>
           <li>
-            <NavLink to="/missions">Missions</NavLink>
+            <NavLink to="/missions" className="links">Missions</NavLink>
           </li>
           <li>
-            <NavLink to="/profile">My Profile</NavLink>
+            <NavLink to="/profile" className="links">My Profile</NavLink>
           </li>
         </nav>
       </div>

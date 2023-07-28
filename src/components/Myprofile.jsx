@@ -32,7 +32,7 @@ function Myprofile() {
         </ul>
         <h2>My missions</h2>
         {reservedMissions.map((item) => (
-          <div className="mission" key={item.id}>
+          <div className="mission" key={item.mission_id}>
             <h3>{item.mission_name}</h3>
             <p>{item.description}</p>
           </div>
