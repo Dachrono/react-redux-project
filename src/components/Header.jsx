@@ -3,6 +3,8 @@ import Logo from '../assets/logo.png';
 import '../styles/Header.css';
 
 function Header() {
+  const linkActive = ({ isActive }) => (isActive ? 'selected links' : 'links');
+
   return (
     <header>
       <div className="header">
@@ -12,13 +14,13 @@ function Header() {
         </div>
         <nav>
           <li>
-            <NavLink to="/" className="links">Rockets</NavLink>
+            <NavLink to="/" className={linkActive}>Rockets</NavLink>
           </li>
           <li>
-            <NavLink to="/missions" className="links">Missions</NavLink>
+            <NavLink to="/missions" className={linkActive}>Missions</NavLink>
           </li>
           <li>
-            <NavLink to="/profile" className="links">My Profile</NavLink>
+            <NavLink to="/profile" className={linkActive}>My Profile</NavLink>
           </li>
         </nav>
       </div>

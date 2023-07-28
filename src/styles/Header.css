@@ -40,3 +40,7 @@ nav li {
 nav li a {
   text-decoration: none;
 }
+
+.selected {
+  border-bottom: 2px solid #000;
+}
