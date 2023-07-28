@@ -34,7 +34,6 @@ const rocketsSlice = createSlice({
       const id = parseInt(action.payload, 10);
       state.rockets = state.rockets.map((rocket) => {
         if (rocket.id === id) {
-          // console.log(`Rocket ${rocket.id} is reserved`);
           return { ...rocket, isReserved: true };
         }
         return rocket;
@@ -44,7 +43,6 @@ const rocketsSlice = createSlice({
       const id = parseInt(action.payload, 10);
       state.rockets = state.rockets.map((rocket) => {
         if (rocket.id === id) {
-          // console.log(`Rocket ${rocket.id} reserve was canceled`);
           return { ...rocket, isReserved: false };
         }
         return rocket;
