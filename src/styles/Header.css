@@ -1,0 +1,46 @@
+header {
+  border-bottom: 1px solid rgb(202, 190, 190);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem 2rem;
+}
+
+.logo {
+  height: 3.5vw;
+  cursor: pointer;
+}
+
+.logo__title {
+  margin-left: 2vw;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 2rem;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav li a {
+  text-decoration: none;
+}
+
+.selected {
+  border-bottom: 2px solid #000;
+}

@@ -1,0 +1,78 @@
+.rockets__container {
+  width: 90%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.rockets__card {
+  max-width: 900px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.rockets__card__img {
+  width: 100%;
+  height: 100%;
+  max-width: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.rockets__card__title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: black;
+}
+
+.rockets__reserveBtn {
+  color: white;
+  padding: 0.5rem 1rem;
+  background-color: #4b89ac;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.rockets__reserveBtn:hover {
+  background-color: white;
+  color: rgb(184, 175, 175);
+  border: 1px solid rgb(184, 175, 175);
+}
+
+.rockets__cancelBtn {
+  color: white;
+  padding: 0.5rem 1rem;
+  background-color: darkred;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.rockets__cancelBtn:hover {
+  background-color: white;
+  color: darkred;
+  border: 1px solid darkred;
+}
+
+.rockets__card__badge {
+  font-size: 0.8rem;
+  margin-right: 0.2rem;
+  padding: 0.2rem 0.4rem;
+  background-color: darkgreen;
+  color: white;
+  border-radius: 4px;
+}
