@@ -60,7 +60,3 @@ export const missionsSlice = createSlice({
 });
 
 export const { addReservedMission, removedMission } = missionsSlice.actions;
-
-export const otra = createSlice({
-  name: 'otra',
-});
